@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Social Media Automation Tool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="eyebrow">AI social studio</p>
+  <h1>One idea. Every platform. A full week planned.</h1>
+  <p>Create LinkedIn posts, Instagram captions and hashtags, repurpose a post, and build a weekly content calendar.</p>
+</header>
+
+<main>
+  <form id="form" class="card">
+    <div class="tabs" role="tablist" aria-label="Mode">
+      <button type="button" class="on" data-mode="generate" role="tab" aria-selected="true">Create posts</button>
+      <button type="button" data-mode="repurpose" role="tab" aria-selected="false">Repurpose a post</button>
+      <button type="button" data-mode="calendar" role="tab" aria-selected="false">Weekly calendar</button>
+    </div>
+
+    <div id="topicBox">
+      <label for="topic">Topic or short brief</label>
+      <textarea id="topic" rows="3" maxlength="1200" placeholder="Example: Launching our new handmade soy candle collection for autumn"></textarea>
+    </div>
+    <div id="origBox" hidden>
+      <label for="original">Original post</label>
+      <textarea id="original" rows="5" maxlength="3000" placeholder="Paste a post you already wrote. It will be rewritten for each platform you pick."></textarea>
+    </div>
+
+    <div class="row">
+      <div><label for="audience">Audience</label>
+        <input id="audience" maxlength="200" placeholder="e.g. young professionals in Lahore"></div>
+      <div><label for="tone">Tone</label>
+        <select id="tone">
+          <option>Professional</option><option>Friendly</option><option>Playful</option>
+          <option>Inspirational</option><option>Bold</option><option>Luxury</option>
+        </select></div>
+    </div>
+
+    <fieldset>
+      <legend>Platforms</legend>
+      <label class="chk"><input type="checkbox" name="plat" value="LinkedIn" checked> LinkedIn</label>
+      <label class="chk"><input type="checkbox" name="plat" value="Instagram" checked> Instagram</label>
+      <label class="chk"><input type="checkbox" name="plat" value="X"> X (Twitter)</label>
+      <label class="chk"><input type="checkbox" name="plat" value="Facebook"> Facebook</label>
+    </fieldset>
+
+    <button id="go" class="primary" type="submit">Generate posts</button>
+    <p id="error" class="error" role="alert" hidden></p>
+  </form>
+
+  <section id="result" hidden></section>
+</main>
+<script src="/static/script.js"></script>
+</body>
+</html>
